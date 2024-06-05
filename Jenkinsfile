@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git url: 'https://github.com/NUCESFAST/scd-final-lab-exam-Fatimaqurban.git', branch: 'master'
+                git url: 'https://github.com/NUCESFAST/scd-final-lab-exam-Fatimaqurban', branch: 'master'
             }
         }
         
