@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: classroom-service
+  labels:
+    app: classroom-service
+spec:
+  selector:
+    app: classroom-service
+  ports:
+    - protocol: TCP
+      port: 1196
+      targetPort: 1196
+  type: NodePort

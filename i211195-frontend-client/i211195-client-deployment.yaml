@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: client-deployment
+  template:
+    metadata:
+      labels:
+        app: client-deployment
+    spec:
+      containers:
+        - name: client-deployment
+          image: fatimaqurban/client-deployment
+          ports:
+            - containerPort: 1198

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eventbus-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eventbus-deployment
+  template:
+    metadata:
+      labels:
+        app: eventbus-deployment
+    spec:
+      containers:
+      - name: eventbus
+        image: fatimaqurban/eventbus-deployment
+        ports:
+        - containerPort: 1197
+        env:
+        - name: MONGODB_URL
+          valueFrom:
+            secretKeyRef:
+              name: eventbus-db-secret
+              key: MONGODB_URL

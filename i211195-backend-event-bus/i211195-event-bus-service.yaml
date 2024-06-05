@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eventbus-service
+  labels:
+    app: eventbus-service
+spec:
+  selector:
+    app: eventbus-service
+  ports:
+    - protocol: TCP
+      port: 1197
+      targetPort: 1197
+  type: NodePort
