@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Define Docker Hub credentials and repository details
-        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')
+        DOCKER_HUB_CREDENTIALS = 'docker-hub-credentials'
         DOCKER_HUB_REPO = 'fatimaqurban'
         // Define project directories
         BACKEND_SERVICE1_DIR = 'i211195-backend-Auth'
